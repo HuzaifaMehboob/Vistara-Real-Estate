@@ -1,9 +1,10 @@
+
 import Home from "./Screens/Home";
 
 
 function App() {
   return (
-    <div className="w-full h-[100vh] bg-blue-100 overflow-x-hidden">
+    <div className="w-full h-[100vh]  overflow-x-hidden">
         <Home/>
     </div>
   );
