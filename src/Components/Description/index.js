@@ -3,11 +3,20 @@ import React from 'react';
 import { MdCallMade } from "react-icons/md";
 
 const Description = () => {
+
+  const stats = [
+    { title: "200+", subtitle: "Modern Properties" },
+    { title: "98%", subtitle: "Client Satisfaction" },
+    { title: "12+", subtitle: "Years of Experience" },
+    { title: "20+", subtitle: "Award Winning" },
+  ];
+
+
   return (
-    <div className="w-full  bg-white py-5 mt-14 mb-5 px-20 flex justify-between items-center gap-10">
+    <div className="w-full  bg-white py-5 my-24 px-20 flex justify-between items-center gap-10">
       <div className="w-[40%] flex flex-col space-y-6">
         <h3 className="text-4xl font-bold">
-          Building dreams into stunning <span className="text-red-500"> real estate</span>
+          Building dreams into stunning <span className="text-green-500"> real estate</span>
         </h3>
         <p className="text-gray-700 text-lg">
           We take pride in our track record of excellence and innovation in the real estate industry. Here's a glimpse of our notable achievements.
@@ -20,22 +29,15 @@ const Description = () => {
 
       {/* Second div with grid structure */}
       <div className="w-[35%] h-[250px] grid grid-cols-2 gap-4">
-        <div className="bg-[#FBF0EA] p-5 text-center rounded-lg">
-          <h4 className="text-3xl font-bold">200+</h4>
-          <p className="text-gray-600">Modern Properties</p>
-        </div>
-        <div className="bg-[#FBF0EA] p-5 text-center rounded-lg">
-          <h4 className="text-3xl font-bold">98%</h4>
-          <p className="text-gray-600">Client Satisfaction</p>
-        </div>
-        <div className="bg-[#FBF0EA] p-5 text-center rounded-lg">
-          <h4 className="text-3xl font-bold">12+</h4>
-          <p className="text-gray-600">Years of Experience</p>
-        </div>
-        <div className="bg-[#FBF0EA] p-5 text-center rounded-lg">
-          <h4 className="text-3xl font-bold">20+</h4>
-          <p className="text-gray-600">Award Winning</p>
-        </div>
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className="bg-white border-2 border-[#CCFF00] p-5 text-center rounded-lg flex flex-col justify-center h-full"
+          >
+            <h4 className="text-3xl font-bold">{stat.title}</h4>
+            <p className="text-gray-600">{stat.subtitle}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

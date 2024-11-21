@@ -51,13 +51,13 @@ const PropertyCard = ({ property, className }) => (
     <img src={property.image} alt={property.title} className="w-full h-64 object-cover rounded-md mb-4" />
     <h3 className="text-lg font-semibold px-4">{property.title}</h3>
     <p className="text-gray-600 px-4">{property.location}</p>
-    <p className="text-orange-500 font-semibold px-4">{property.price}</p>
+    <p className="text-green-500 font-semibold px-4">{property.price}</p>
   </div>
 );
 
 const PropertyGrid = () => (
   <div className="max-w-6xl mx-auto flex-col flex items-center text-center justify-between py-6 ">
-    <h2 className="text-3xl font-bold mb-4">Find your home with <span className="text-orange-500">unique preferences</span></h2>
+    <h2 className="text-3xl font-bold mb-4">Find your home with <span className="text-green-500">unique preferences</span></h2>
     <p className="text-gray-600 mb-6">Explore a curated selection of homes designed to match your unique preferences, making it effortless to find the ideal property that perfectly fits your lifestyle and needs.</p>
     <div className="grid grid-cols-3 gap-14 relative">
       <PropertyCard property={properties[0]} />
@@ -67,7 +67,7 @@ const PropertyGrid = () => (
       <PropertyCard property={properties[4]} className="relative top-10" /> {/* Slightly lower position */}
       <PropertyCard property={properties[5]} />
     </div>
-    <button className="mt-20 py-2 px-4 bg-orange-500 text-white font-semibold rounded-lg">View All Properties</button>
+    <button className="mt-20 py-2 px-4 bg-green-500 text-white font-semibold rounded-lg">View All Properties</button>
   </div>
 );
 

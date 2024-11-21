@@ -18,7 +18,7 @@ const PropertyCard = ({ image, title, price, address, beds, baths, area }) => {
           <span>{baths} Baths</span>
           <span>{area} Sqft</span>
         </div>
-        <p className="text-red-500 font-bold text-lg mt-2">{price}</p>
+        <p className="text-green-500 font-bold text-lg mt-2">{price}</p>
       </div>
     </div>
   );
