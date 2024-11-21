@@ -28,10 +28,10 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#FAF2EF] py-12 px-4">
+    <section className="bg-green-100 py-12 my-14 px-4">
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold">
-          Clients speak volumes <span className="text-red-500">about us</span>
+          Clients speak volumes <span className="text-green-700">about us</span>
         </h2>
         <p className="text-gray-500 mt-2">
           Listen to the stories of our satisfied clients, sharing their experiences and successes with our exceptional real estate services.
@@ -45,7 +45,7 @@ const Testimonials = () => {
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                className="w-16 h-16 rounded-full border-4 object-cover border-pink-200"
+                className="w-16 h-16 rounded-full border-4 object-cover border-green-500"
               />
             </div>
             <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
@@ -57,7 +57,7 @@ const Testimonials = () => {
 
       <div className="flex justify-center mt-8">
         <div className="flex space-x-2">
-          <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+          <span className="w-3 h-3 bg-green-800 rounded-full"></span>
           <span className="w-3 h-3 bg-gray-300 rounded-full"></span>
           <span className="w-3 h-3 bg-gray-300 rounded-full"></span>
         </div>

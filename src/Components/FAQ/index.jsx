@@ -36,7 +36,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-white py-12 px-6">
+    <section className="bg-white py-12 my-14 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold text-gray-800 text-center mb-8">
           Hear from Our Happy Homeowners
