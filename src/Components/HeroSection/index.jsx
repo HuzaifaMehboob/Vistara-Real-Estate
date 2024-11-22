@@ -126,19 +126,7 @@ const HeroSection = () => {
       </section>
 
       {/* Additional Content */}
-      <section className="bg-gray-100 text-gray-900 py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">More About HomeQuest</h2>
-          <p className="text-lg mb-4">
-            HomeQuest is your ultimate platform for real estate solutions,
-            offering intuitive tools and seamless experiences.
-          </p>
-          <p className="text-lg">
-            Whether you're looking for a home, exploring properties, or seeking
-            the right guidance, we've got you covered.
-          </p>
-        </div>
-      </section>
+     
     </>
   );
 };
