@@ -27,8 +27,8 @@ const HeroSection = () => {
           backgroundImage: `url(${hero_pic})`,
         }}
       >
-        <header className="absolute top-0 left-0 w-full z-20 px-10 bg-transparent">
-        <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
+        <header className="absolute top-0 left-0 w-full z-20 px-5 lg:px-10 bg-transparent">
+        <div className="max-w-7xl py-4 flex  justify-between items-center">
           {/* Logo and Name */}
           <div className="flex items-center space-x-3">
             <SiHomeassistant size={30} color="#CCFF00" />
