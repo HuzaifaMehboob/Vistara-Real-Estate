@@ -8,7 +8,7 @@ const Services = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
           Discover the range of real estate <span className="text-green-500">services</span> we offer
         </h2>
-        <div className="border border-dashed border-gray-300 p-2">
+        <div className=" p-2">
           <img
             src= {person1}
             alt="Person in suit"
