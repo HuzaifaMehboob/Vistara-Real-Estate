@@ -113,15 +113,15 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-blue-200 bg-opacity-10"></div>
 
         {/* Hero Content */}
-        <div className="relative z-10 flex flex-col justify-center items-start max-w-7xl pl-10 my-auto py-16">
-          <h1 className="text-8xl font-semibold mb-4">
+        <div className="relative z-10 text-left xs:text-center  xs:items-center flex flex-col justify-center items-start max-w-7xl pl-10 my-auto py-16 xs:pl-0">
+          <h1 className="text-9xl lg:text-7xl md:text-6xl sm:text-5xl xs:text-4xl font-semibold mb-4">
             Turning Your Real Estate<br/> Dreams into Reality
           </h1>
-          <p className="text-2xl mb-6 mt-4 max-w-2xl">
+          <p className="text-2xl lg:text-2xl md:text-lg sm:text-lg xs:text-lg mb-6 mt-4  max-w-2xl">
             Forget clunky application forms. We offer a modern, user-friendly
             platform that makes applying for a job a breeze.
           </p>
-          <button className="mt-4 py-6 px-7 flex items-center gap-2 text-xl text-white bg-green-800 font-semibold rounded-lg hover:bg-gray-100 transition">
+          <button className="mt-4 py-6 px-7 lg:px-6 lg:py-4 xs:px-4 xs:text-sm xs:py-3 md:py-4 md:px-5 sm:px-5 sm:py-4  flex items-center gap-2 text-xl text-white bg-green-800 font-semibold rounded-lg hover:bg-gray-100 transition">
             Explore All Properties
         </button>
         </div>
