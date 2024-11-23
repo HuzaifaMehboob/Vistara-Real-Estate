@@ -32,7 +32,7 @@ const HeroSection = () => {
           {/* Logo and Name */}
           <div className="flex items-center space-x-3">
             <SiHomeassistant size={30} color="#CCFF00" />
-            <span className="text-3xl font-medium text-white">HomeQuest</span>
+            <span className="text-3xl font-medium text-white">Vistara</span>
           </div>
 
           {/* Navigation Links for Large Screens */}

@@ -2,7 +2,7 @@ import React from 'react';
 import person1 from '../../assets/person1.jpg'
 const Services = () => {
   return (
-    <div className="flex flex-wrap justify-center mt-2 mb-14 items-start bg-[#E5FFB3] p-10">
+    <div className="flex flex-wrap justify-center mt-2 mb-14 items-start bg-gray-100 p-10">
       {/* Left Side - Heading and Image */}
       <div className="w-full md:w-1/2 p-5 flex flex-col items-start">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">

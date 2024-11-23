@@ -7,7 +7,7 @@ import { SiSitepoint } from "react-icons/si";
 
 const TrustedBy = () => {
   return (
-    <section className="bg-[#CCFF00] py-8">
+    <section className="bg-[#CCFF00]  py-8">
       <div className="max-w-7xl mx-auto px-4 space-y-8">
         <h2 className="text-center text-xl  font-semibold mb-6 text-gray-800">
           Trusted by leading companies
