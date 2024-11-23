@@ -46,11 +46,11 @@ const PropertyCard = ({ property, className }) => (
 );
 
 const PropertyGrid = () => (
-  <div className="max-w-6xl mx-auto flex flex-col items-center text-center pt-10 pb-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w  flex flex-col bg-white items-center text-center pt-28 pb-28 px-4 sm:px-6 lg:px-8">
     <h2 className="text-4xl font-bold mb-6">
       Our newest updates and <span className="text-green-500">insights</span>
     </h2>
-    <p className="text-gray-600 text-lg mb-8">
+    <p className="text-gray-600 text-lg mb-10">
       Stay up-to-date with our latest news and blog posts, offering valuable
       insights and updates on industry trends and expert tips.
     </p>

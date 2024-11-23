@@ -114,8 +114,8 @@ const PropertyCard = ({ property }) => (
 
 // Property Grid Component
 const PropertyGrid = () => (
-  <div className="max-w-7xl mx-auto flex flex-col items-center text-center py-10 px-6 sm:px-12">
-    <h2 className="text-4xl font-bold mb-6">
+  <div className="max-w-7xl mx-auto flex flex-col bg-white items-center text-center pt-14 pb-32 px-6 sm:px-12">
+    <h2 className="text-4xl font-bold mb-14">
       Exclusive Properties by <span className="text-green-500">HomeQuest</span>
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

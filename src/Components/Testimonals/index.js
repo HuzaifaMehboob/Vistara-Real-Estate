@@ -28,7 +28,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-green-100 py-12 my-14 px-4">
+    <section className="bg-green-100 py-12  px-4">
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold">
           Clients speak volumes <span className="text-green-700">about us</span>

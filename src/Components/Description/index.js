@@ -10,7 +10,7 @@ const Description = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-5 my-24 px-6 md:px-24 flex flex-col md:flex-row justify-between items-center gap-10">
+    <div className="w-full bg-white py-28 px-6 md:px-24 flex flex-col md:flex-row justify-between items-center gap-10">
       {/* First Div */}
       <div className="w-full md:w-[40%] flex flex-col space-y-6 text-center md:text-left">
         <h3 className="text-4xl font-bold">
