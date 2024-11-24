@@ -13,7 +13,7 @@ import Footer from '../../Components/Footer'
 const Home = () => {
   return (
     <>
-        <HeroSection/>
+        <HeroSection page={"Home"}/>
         <TrustedBy/>
         <Description/>
         <Services/>

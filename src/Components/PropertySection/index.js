@@ -1,4 +1,4 @@
-import React from 'react';
+
 import pr_1 from '../../assets/pr_1.png';
 import pr_2 from '../../assets/pr_2.png';
 import pr_3 from '../../assets/pr_3.png';
@@ -8,6 +8,9 @@ import { MdOutlineBed } from "react-icons/md";
 import { LuBath } from "react-icons/lu";
 import { LuScaling } from "react-icons/lu";
 import { MdCallMade } from 'react-icons/md';
+import React, { useState, useEffect, useRef } from "react"
+
+import { useSpring} from "react-spring"; // Import react-spring
 
 // Properties Data
 const properties = [
@@ -113,12 +116,50 @@ const PropertyCard = ({ property }) => (
 );
 
 // Property Grid Component
-const PropertyGrid = () => (
+const PropertyGrid = () => {
+
+
+  const [isVisible, setIsVisible] = useState(false); // Track visibility for transition
+
+  const heroRef = useRef(null); // Reference to the Hero section
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Trigger the animation when in view
+        } else {
+          setIsVisible(false); // Optionally reset the animation when out of view
+        }
+      },
+      { threshold: 0.5 } // Trigger when at least 50% of the component is in view
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    // Cleanup observer on component unmount
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+  
+  const heroContentAnimation = useSpring({
+    from: { transform: "translateY(100px)", opacity: 0 }, // Start from below and invisible
+    to: { transform: "translateY(0px)", opacity: 1 }, // End at normal position with full opacity
+    config: { tension: 200, friction: 70 },
+  });
+  return (
+  
   <div className="max-w-7xl mx-auto flex flex-col bg-white items-center text-center pt-14 pb-32 px-6 sm:px-12">
     <h2 className="text-4xl font-bold mb-14">
-      Exclusive Properties by <span className="text-green-500">HomeQuest</span>
+      Exclusive Properties by <span className="text-green-500">Vistara</span>
     </h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div  className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10`}  >
       {properties.map((property, index) => (
         <PropertyCard key={index} property={property} />
       ))}
@@ -129,5 +170,6 @@ const PropertyGrid = () => (
     </button>
   </div>
 );
+}
 
 export default PropertyGrid;
