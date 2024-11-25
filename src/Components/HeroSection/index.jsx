@@ -27,15 +27,15 @@ const HeroSection = ({page}) => {
   return  (
     <section
       className={`hero-section relative ${
-        page === "Home" ? "min-h-screen" : "min-h-[80vh]"
+        page === "Home" ? "min-h-screen" : page=== "Details" ? "min-h-[10vh] " : "min-h-[70vh]"
       } bg-cover bg-center text-white flex flex-col justify-center items-start`}
       style={{
         backgroundImage: `url(${hero_pic})`,
       }}
     >
       <header className="absolute top-0 left-0 w-full z-20 px-5 lg:px-10 bg-transparent">
-        <div className="max-w-7xl py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
+        <div className={`max-w-7xl ${page === "Details" ? 'py-2' : 'py-4'} flex justify-between items-center`} >
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={()=>navigate("/")}>
             <SiHomeassistant size={30} color="#CCFF00" />
             <span className="text-3xl font-medium text-white">Vistara</span>
           </div>
@@ -126,12 +126,17 @@ const HeroSection = ({page}) => {
         
       </animated.div>
       :
+      page === "Contact" ?
       <animated.div style={heroContentAnimation} className="relative z-10 text-center max-w-7xl  m-auto">
         <h1 className="text-9xl lg:text-7xl md:text-6xl sm:text-5xl xs:text-4xl font-semibold mb-4">
           Contact Us
         </h1>
+      </animated.div>
+      :
+      <animated.div style={heroContentAnimation} className="relative z-10 text-center max-w-7xl  m-auto">
         
       </animated.div>
+
 }
     </section>
 

@@ -78,7 +78,7 @@ const properties = [
 
 // Property Card Component
 const PropertyCard = ({ property }) => (
-  <div className="bg-white border border-gray-200 shadow-sm rounded-xl overflow-hidden">
+  <div className="bg-white border cursor-pointer border-gray-200 shadow-sm rounded-xl overflow-hidden">
     {/* Image Section */}
     <div className="relative">
       <img
