@@ -42,7 +42,7 @@ const PropertyDetails = () => {
       {/* Main Section: Left Carousel and Right Details */}
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section: Carousel */}
-        <div className="w-full  lg:w-[60%]">
+        <div className="w-full  lg:w-[65%]">
         {/* sticky h-[calc(140vh-32px)] top-4 */}
           {/* Large Carousel */}
           <Swiper
@@ -90,7 +90,7 @@ const PropertyDetails = () => {
         </div>
 
         {/* Right Section: Property Details */}
-        <div className="w-full lg:w-[40%] overflow-y-auto">
+        <div className="w-full lg:w-[35%] overflow-y-auto">
             <RightSection/>
         </div>
       </div>

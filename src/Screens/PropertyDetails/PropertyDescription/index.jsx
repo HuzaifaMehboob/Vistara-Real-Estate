@@ -1,9 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 import { IoBedOutline } from "react-icons/io5";
 import { SlSizeFullscreen } from "react-icons/sl";
 import { LuBath } from "react-icons/lu";
+import MapSection from "../MapSection";
+import { FaLocationDot } from "react-icons/fa6";
 
 const PropertyDescription = () => {
+
+  const [type,setType] = useState("detail")
   // Facilities Data
   const facilities = [
     { icon: "🛏️", label: "Maids Room" },
@@ -34,7 +38,7 @@ const PropertyDescription = () => {
   ]
 
   return (
-    <div className=" py-2 mt-4 bg-transparent  border-t-2 border-gray-400 ">
+    <div className=" py-2 mt-4  bg-transparent  border-t-2 border-gray-400 ">
       {/* Section Header */}
       {/* <div className="bg-white shadow-lg my-6 w-full py-3 px-4 rounded-xl space-y-2 ">
               <h1 className='text-2xl font-bold mb-4'>Property Agents </h1>
@@ -88,6 +92,30 @@ const PropertyDescription = () => {
           </div>
         ))}
       </div> */}
+
+      <div className="mb-3 mt-3 ">
+        <p className="text-3xl mb-1 font-bold">PH305 Plan in 173 Maverick by the Elevated Companies</p>
+        <div className="flex gap-2 items-center text-gray-600 text-sm">
+          <FaLocationDot />
+          <p className="text-lg">Las Vegas, NY</p>
+        </div>
+      </div>
+      <div className=" flex gap-10   w-[65%] items-center py-2 ">
+        {features.map((ele,index)=>(
+          <div className="flex gap-2 text-gray-600 items-center">
+            <div className="py-2 rounded-xl ">
+            {ele.icon}
+            </div>
+            <p className="text-lg font-semibold">{ele.name}</p>
+          </div>
+        ))}
+    </div>
+
+    <div className="py-2 bg-black px-2 mb-6 mt-2 space-x-2 rounded-lg">
+      <button className={`${type==="detail" ? "text-black bg-white" : "text-white bg-transparent"} py-2 px-4  rounded-xl`} onClick={()=>setType("detail")}>Overview</button>
+      <button className={`${type==="features" ? "text-black bg-white" : "text-white bg-transparent"} py-2 px-4   rounded-xl`} onClick={()=>setType("features")}>Features</button>
+      <button className={`${type==="map" ? "text-black bg-white" : "text-white bg-transparent"} py-2 px-4  rounded-xl`} onClick={()=>setType("map")}>Location & Nearby</button>
+    </div>
 
       <h2 className="text-2xl  font-bold mb-4 ">Property Details</h2>
 
@@ -172,6 +200,7 @@ const PropertyDescription = () => {
           ))}
         </div>
       </div>
+      <MapSection/>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import Contact from './Screens/Contact'
 import PropertyDetails from "./Screens/PropertyDetails";
 function App() {
   return (
-    <div className="w-full h-[100vh] bg-gray-100  overflow-x-hidden">
+    <div className="w-full h-[100vh] bg-white  overflow-x-hidden">
        <Router>
         <Routes>
           <Route path="/" element={<Home />} />

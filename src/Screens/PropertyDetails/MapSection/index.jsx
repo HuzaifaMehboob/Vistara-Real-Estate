@@ -1,47 +1,57 @@
 import React, { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { IoLocationSharp } from "react-icons/io5";
-import { renderToStaticMarkup } from 'react-dom/server'; // Converts React components to static HTML
 
 const MapSection = ({ lat = 40.7128, lng = -74.0060 }) => {
-  const mapRef = useRef(null); // Use ref to store the map instance
+  const mapRef = useRef(null);
 
   useEffect(() => {
     if (!mapRef.current) {
-      // Initialize the map only if it doesn't already exist
+      // Initialize the map
       mapRef.current = L.map('map').setView([lat, lng], 13);
 
-      // Add OpenStreetMap tiles
+      // OpenStreetMap Tiles
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(mapRef.current);
 
-      // Convert React component (IoLocationSharp) into static HTML
-      const iconHtml = renderToStaticMarkup(<IoLocationSharp style={{ color: 'red', fontSize: '20px' }} />);
+      // Add a custom marker
+      const customIcon = L.icon({
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/854/854878.png',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+      });
 
-      // Add a marker at the property location
-      L.marker([lat, lng])
+      L.marker([lat, lng], { icon: customIcon })
         .addTo(mapRef.current)
-        .bindPopup(iconHtml) // Use the converted static HTML for the popup
-        .openPopup();
+        .bindPopup('<strong>Property Location</strong>');
     }
 
-    // Cleanup function to remove the map instance
     return () => {
       if (mapRef.current) {
         mapRef.current.remove();
-        mapRef.current = null; // Reset the reference
+        mapRef.current = null;
       }
     };
   }, [lat, lng]);
 
-  return(
-    <>
-      <div className='pb-2 mb-2 border-b-2 border-gray-400'><h1 className='text-2xl font-semibold'>Location</h1></div>
-      <div id="map" style={{ height: '300px', width: '100%' }} className=' mb-6'></div>
-    </>
-  ) 
+  return (
+    <div className="map-container mt-4">
+      <div className="heading">
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">Location & Nearby</h1>
+      </div>
+      <div
+        id="map"
+        style={{
+          height: '400px',
+          width: '90%',
+          border: '2px solid #4CAF50',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      ></div>
+    </div>
+  );
 };
 
 export default MapSection;
