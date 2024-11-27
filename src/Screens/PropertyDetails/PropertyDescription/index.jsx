@@ -34,11 +34,51 @@ const PropertyDescription = () => {
   ]
 
   return (
-    <div className="px-4 py-4 bg-white rounded-lg ">
+    <div className=" py-2 mt-4 bg-transparent  border-t-2 border-gray-400 ">
       {/* Section Header */}
+      {/* <div className="bg-white shadow-lg my-6 w-full py-3 px-4 rounded-xl space-y-2 ">
+              <h1 className='text-2xl font-bold mb-4'>Property Agents </h1>
 
-      <h2 className="text-4xl text-semibold">Price: $500000</h2>
-      <div className=" flex justify-between items-center  py-6">
+              
+              <div className='py-3 px-4 w-full shadow-md rounded-xl bg-gray-100 flex justify-between items-center'>
+                <div className='gap-4 flex  items-center  '>
+                  <div className='h-12 w-12 rouned-2xl '>
+                    <img src={person1} className='w-full h-full object-cover object-center rounded-3xl' />
+                  </div>
+                  <div className=''>
+                    <h1>Amr ibn al-Jamuh</h1>
+                    <p>RT Edgar - Boroondra</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center gap-4'>
+                      <MdCall size={20}/>
+                      <MdOutlineMail size={20} />
+                  </div>
+                  
+                  
+              </div>
+
+              <div className='py-3 px-4 w-full shadow-md rounded-xl bg-gray-100 flex justify-between items-center'>
+                <div className='gap-4 flex  items-center  '>
+                  <div className='h-12 w-12 rouned-2xl '>
+                    <img src={person2} className='w-full h-full object-cover object-center rounded-3xl' />
+                  </div>
+                  <div className=''>
+                    <h1>Amr ibn al-Jamuh</h1>
+                    <p>RT Edgar - Boroondra</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center gap-4'>
+                      <MdCall size={20}/>
+                      <MdOutlineMail size={20} />
+                  </div>
+                  
+                  
+              </div>
+          </div> */}
+
+      {/* <h2 className="text-4xl text-semibold">Price: $500000</h2> */}
+      {/* <div className=" flex justify-between items-center  py-6">
         {features.map((ele,index)=>(
           <div className="flex gap-3 text-gray-600 items-center">
             <div className="p-2 rounded-xl bg-white">
@@ -47,8 +87,9 @@ const PropertyDescription = () => {
             <p className="text-lg font-semibold">{ele.name}</p>
           </div>
         ))}
-      </div>
-      <h2 className="text-2xl  font-bold mb-4">Property Details</h2>
+      </div> */}
+
+      <h2 className="text-2xl  font-bold mb-4 ">Property Details</h2>
 
       {/* Property Description */}
       <p className="text-gray-600 mb-4 leading-relaxed">

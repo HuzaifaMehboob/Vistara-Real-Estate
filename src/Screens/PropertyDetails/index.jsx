@@ -2,6 +2,8 @@ import React from 'react';
 import call_pic from '../../assets/call_pic.jpg';
 import pr_1 from "../../assets/pr_1.png";
 import pr_3 from "../../assets/pr_3.png";
+import person1 from '../../assets/person1.jpg'
+import person2 from '../../assets/person2.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,13 +11,16 @@ import { Navigation, Thumbs } from 'swiper/modules'; // Import Swiper modules
 import VideoPreview from '../../Components/VideoPreview'; // Assuming this component is already created
 import house_tour from '../../assets/house_tour.mp4';
 import { FaLocationDot } from "react-icons/fa6";
-import PropertyDescription from './PropertyDescription';
 import HeroSection from '../../Components/HeroSection'
 import SimilarProperties from './SimilarProperies';
 import Footer from '../../Components/Footer'
+import RightSection from './RightSection';
+import PropertyDescription from './PropertyDescription';
+
+
 const PropertyDetails = () => {
 
-  const images = [call_pic, pr_1, pr_3]; // Array of images for the carousel
+  const images = [call_pic, pr_1, pr_3,call_pic, pr_1, pr_3]; // Array of images for the carousel
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null); // For syncing thumbnails
 
   return (
@@ -37,7 +42,8 @@ const PropertyDetails = () => {
       {/* Main Section: Left Carousel and Right Details */}
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section: Carousel */}
-        <div className="w-full sticky h-[calc(100vh-32px)] top-4 lg:w-[55%]">
+        <div className="w-full  lg:w-[60%]">
+        {/* sticky h-[calc(140vh-32px)] top-4 */}
           {/* Large Carousel */}
           <Swiper
             spaceBetween={10}
@@ -77,11 +83,15 @@ const PropertyDetails = () => {
               </div>
             </SwiperSlide>
           </Swiper>
+          
+          <PropertyDescription/>
+
+          
         </div>
 
         {/* Right Section: Property Details */}
-        <div className="w-full lg:w-[47%] overflow-y-auto">
-          <PropertyDescription />
+        <div className="w-full lg:w-[40%] overflow-y-auto">
+            <RightSection/>
         </div>
       </div>
     </div>
