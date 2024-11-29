@@ -1,21 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const MapSection = ({ lat = 40.7128, lng = -74.0060 }) => {
+const MapSection = ({ lat = 33.6844, lng = 73.0479 }) => {
   const mapRef = useRef(null);
+  const [activeTab, setActiveTab] = useState('map'); // Manage active tab
 
   useEffect(() => {
     if (!mapRef.current) {
       // Initialize the map
-      mapRef.current = L.map('map').setView([lat, lng], 13);
+      mapRef.current = L.map('map').setView([lat, lng], 15);
 
-      // OpenStreetMap Tiles
+      // Add OpenStreetMap Tiles
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(mapRef.current);
 
-      // Add a custom marker
+      // Add a single custom marker
       const customIcon = L.icon({
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/854/854878.png',
         iconSize: [40, 40],
@@ -24,7 +25,7 @@ const MapSection = ({ lat = 40.7128, lng = -74.0060 }) => {
 
       L.marker([lat, lng], { icon: customIcon })
         .addTo(mapRef.current)
-        .bindPopup('<strong>Property Location</strong>');
+        .bindPopup('<strong>Property Location</strong>'); // Popup for the marker
     }
 
     return () => {
@@ -42,6 +43,7 @@ const MapSection = ({ lat = 40.7128, lng = -74.0060 }) => {
       </div>
       <div
         id="map"
+        className='mx-auto md:mx-0 '
         style={{
           height: '400px',
           width: '90%',

@@ -4,6 +4,7 @@ import { SlSizeFullscreen } from "react-icons/sl";
 import { LuBath } from "react-icons/lu";
 import MapSection from "../MapSection";
 import { FaLocationDot } from "react-icons/fa6";
+import DetailsCard from "../DetailCard";
 
 const PropertyDescription = () => {
 
@@ -38,69 +39,31 @@ const PropertyDescription = () => {
   ]
 
   return (
-    <div className=" py-2 mt-4  bg-transparent  border-t-2 border-gray-400 ">
-      {/* Section Header */}
-      {/* <div className="bg-white shadow-lg my-6 w-full py-3 px-4 rounded-xl space-y-2 ">
-              <h1 className='text-2xl font-bold mb-4'>Property Agents </h1>
-
-              
-              <div className='py-3 px-4 w-full shadow-md rounded-xl bg-gray-100 flex justify-between items-center'>
-                <div className='gap-4 flex  items-center  '>
-                  <div className='h-12 w-12 rouned-2xl '>
-                    <img src={person1} className='w-full h-full object-cover object-center rounded-3xl' />
-                  </div>
-                  <div className=''>
-                    <h1>Amr ibn al-Jamuh</h1>
-                    <p>RT Edgar - Boroondra</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-4'>
-                      <MdCall size={20}/>
-                      <MdOutlineMail size={20} />
-                  </div>
-                  
-                  
-              </div>
-
-              <div className='py-3 px-4 w-full shadow-md rounded-xl bg-gray-100 flex justify-between items-center'>
-                <div className='gap-4 flex  items-center  '>
-                  <div className='h-12 w-12 rouned-2xl '>
-                    <img src={person2} className='w-full h-full object-cover object-center rounded-3xl' />
-                  </div>
-                  <div className=''>
-                    <h1>Amr ibn al-Jamuh</h1>
-                    <p>RT Edgar - Boroondra</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-4'>
-                      <MdCall size={20}/>
-                      <MdOutlineMail size={20} />
-                  </div>
-                  
-                  
-              </div>
-          </div> */}
-
-      {/* <h2 className="text-4xl text-semibold">Price: $500000</h2> */}
-      {/* <div className=" flex justify-between items-center  py-6">
-        {features.map((ele,index)=>(
-          <div className="flex gap-3 text-gray-600 items-center">
-            <div className="p-2 rounded-xl bg-white">
-            {ele.icon}
-            </div>
-            <p className="text-lg font-semibold">{ele.name}</p>
+    <div className=" py-2 mt-4 px-3 md:px-0  bg-transparent  border-t-2 border-gray-400 ">
+      <div className='flex gap-2 py-1 items-center block md:hidden lg:hidden'>
+          <div className='w-[8px] h-[8px] rounded-2xl bg-green-400'>
+            
           </div>
-        ))}
-      </div> */}
+          <h2 className='text-green-400 font-semibold '>For Sale</h2>
+        </div>
+        <h2 className="text-5xl font-bold block md:hidden lg:hidden">$500,000</h2>
+      
+    <div className="flex gap-2 items-center text-gray-600 text-sm my-2 block md:hidden lg:hidden">
+          {/* <FaLocationDot size={15}/> */}
+          <p className="text-md">PH305 Plan in 173 Maverick by the Elevated Companies</p>
+      </div>
+      
 
       <div className="mb-3 mt-3 ">
-        <p className="text-3xl mb-1 font-bold">PH305 Plan in 173 Maverick by the Elevated Companies</p>
+        <p className="text-3xl mb-1 font-bold hidden md:block lg:block">PH305 Plan in 173 Maverick by the Elevated Companies</p>
         <div className="flex gap-2 items-center text-gray-600 text-sm">
           <FaLocationDot />
           <p className="text-lg">Las Vegas, NY</p>
         </div>
       </div>
-      <div className=" flex gap-10   w-[65%] items-center py-2 ">
+      
+
+      <div className=" flex gap-5 md:gap-10 lg:gap-10 w-full md:w-[65%] items-center py-2 ">
         {features.map((ele,index)=>(
           <div className="flex gap-2 text-gray-600 items-center">
             <div className="py-2 rounded-xl ">
@@ -117,9 +80,15 @@ const PropertyDescription = () => {
       <button className={`${type==="map" ? "text-black bg-white" : "text-white bg-transparent"} py-2 px-4  rounded-xl`} onClick={()=>setType("map")}>Location & Nearby</button>
     </div>
 
-      <h2 className="text-2xl  font-bold mb-4 ">Property Details</h2>
+    <h2 className="text-2xl  font-bold mb-4 ">Details</h2>
+
+      <div className="bg-red-100">
+        <DetailsCard/>
+      </div>
 
       {/* Property Description */}
+      <div className="mt-8 border-t-2 border-gray-400 py-5">
+      <h2 className="text-2xl  font-bold mb-4 ">Description</h2>
       <p className="text-gray-600 mb-4 leading-relaxed">
         Property are proud to present this unique six (6) bedroom triplex
         Penthouse in Raffles Residences, Palm Jumeirah... A ultra-luxury family
@@ -185,7 +154,7 @@ const PropertyDescription = () => {
           </a>
         </p>
       </div>
-
+      </div>
       {/* Facilities & Amenities Section */}
       <div className="mt-8 border-b-2 border-t-2 border-gray-300 py-5">
         <h3 className="text-xl font-semibold mb-4">Facilities & Amenities</h3>

@@ -5,16 +5,13 @@ import pr_3 from '../../../assets/pr_3.png';
 import pr_4 from '../../../assets/pr_4.png';
 import pr_5 from '../../../assets/pr_5.png';
 import { MdOutlineBed } from "react-icons/md";
-import { LuBath } from "react-icons/lu";
-import { LuScaling } from "react-icons/lu";
-import { MdCallMade } from 'react-icons/md';
 import React, { useState, useEffect, useRef } from "react"
 import { VscSettings } from "react-icons/vsc";
 import { IoIosSearch } from "react-icons/io";
 import { useSpring} from "react-spring"; 
 import Pagination from '../../../Components/Pagination';
 import { useNavigate } from 'react-router-dom';
-
+import PropertyCard from '../../../Components/PropertyCard';
 
 const properties = [
   {
@@ -110,49 +107,7 @@ const properties = [
 ];
 
 
-const PropertyCard = ({ property}) => {
-    const navigate =  useNavigate()
-    return (
-        
-    
-  <div className="bg-white border cursor-pointer border-gray-200 shadow-sm rounded-xl overflow-hidden"
-    onClick={()=>navigate('/details')}>
-    {/* Image Section */}
-    <div className="relative">
-      <img
-        src={property.image}
-        alt={property.title}
-        className="w-full h-64 object-cover"
-      />
-      <span className="absolute top-3 left-3 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-full shadow">
-        {property.status}
-      </span>
-    </div>
 
-    {/* Details Section */}
-    <div className="p-6 text-left">
-      <p className="text-green-600 font-bold text-lg">{property.price}</p>
-      <h3 className="text-lg font-semibold text-gray-800 leading-snug">
-        {property.title}
-      </h3>
-      <div className="flex gap-5 items-center mt-4 text-gray-500 ">
-        <div className="flex items-center gap-2">
-          <LuScaling size={20} />
-          {property.sqft} sq. ft.
-        </div>
-        <div className="flex items-center gap-2">
-          <MdOutlineBed size={20}/>
-          {property.beds} Bed
-        </div>
-        <div className="flex items-center gap-2">
-         <LuBath size={20}/>
-          {property.baths} Bath
-        </div>
-      </div>
-    </div>
-  </div>
-);
-}
 
 // Property Grid Component
 const PropertyComp = ({
@@ -163,26 +118,28 @@ const PropertyComp = ({
 
   return (
   
-    <div className="max-w-7xl mx-auto flex flex-col bg-gray-100 items-center text-center pt-14 pb-32 px-6 sm:px-12">
-    <div className="w-full  mb-4 flex justify-between py-3 px-3 border-b-2 border-green-700">
-        <h2 className="text-4xl font-bold">
-            All Properties
-        </h2>
-        <div className='flex gap-5'>
-        <button className="bg-gray-400 p-3 rounded-3xl text-white">
-            <IoIosSearch size={22} />
-        </button>
-
-        <button className="bg-green-800 px-7 py-2 rounded-xl flex gap-2 items-center text-white">
-            <VscSettings size={20} />
-            <h5 className="text-xl font-semibold">Filter</h5>
-        </button>
-        </div>
+    <div className="max-w-7xl mx-auto flex flex-col bg-gray-100 pt-8 pb-20 px-3 md:px-6 lg:px-6 sm:px-5">
+  {/* Header Section */}
+  <div className="w-full mb-4 flex justify-between items-center py-2 px-3 border-b-2 border-green-700">
+    <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold">
+      All Properties
+    </h2>
+    <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+      <button className="bg-gray-400 p-2 sm:p-2 md:p-3 lg:p-3 rounded-full text-white flex items-center justify-center">
+        <IoIosSearch className="text-sm sm:text-base md:text-lg lg:text-xl" />
+      </button>
+      <button className="bg-green-800 px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-2 rounded-lg flex items-center gap-2 text-white">
+        <VscSettings className="text-sm sm:text-base md:text-lg lg:text-xl" />
+        <h5 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
+          Filter
+        </h5>
+      </button>
     </div>
+  </div>
 
 
     
-    <div  className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10`}  >
+    <div  className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-10 md:gap-8 sm:gap-6 gap-4  `}  >
       {properties.map((property, index) => (
         <PropertyCard key={index} property={property} />
       ))}

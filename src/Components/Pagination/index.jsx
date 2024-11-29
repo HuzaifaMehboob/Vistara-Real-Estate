@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col items-center mt-10 mx-auto">
       {/* Page Info */}
       <span className=" text-gray-700  dark:text-gray-400">
         Showing <span className="font-semibold text-gray-900 dark:text-white px-2">{(currentPage - 1) * 10 + 1}</span> 

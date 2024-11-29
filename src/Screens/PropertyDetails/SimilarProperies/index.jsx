@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import pr_1 from '../../../assets/pr_1.png';
 import pr_2 from '../../../assets/pr_2.png';
 import pr_3 from '../../../assets/pr_3.png';
 import pr_4 from '../../../assets/pr_4.png';
 import pr_5 from '../../../assets/pr_5.png';
-import { MdOutlineBed } from "react-icons/md";
-import { LuBath } from "react-icons/lu";
-import { LuScaling } from "react-icons/lu";
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import PropertyCard from '../../../Components/PropertyCard';
 
 const properties = [
   {
@@ -73,68 +70,59 @@ const properties = [
   },
 ];
 
-const PropertyCard = ({ property }) => (
-  <div className="bg-white border cursor-pointer border-gray-200 shadow-sm rounded-xl overflow-hidden  flex-shrink-0 w-[calc(100%/3-1rem)]">
-    {/* Image Section */}
-    <div className="relative">
-      <img
-        src={property.image}
-        alt={property.title}
-        className="w-full h-64 object-cover"
-      />
-      <span className="absolute top-3 left-3 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-full shadow">
-        {property.status}
-      </span>
-    </div>
-
-    {/* Details Section */}
-    <div className="p-6 text-left">
-      <p className="text-green-600 font-bold text-lg">{property.price}</p>
-      <h3 className="text-lg font-semibold text-gray-800 leading-snug">
-        {property.title}
-      </h3>
-      <div className="flex gap-5 items-center mt-4 text-gray-500 ">
-        <div className="flex items-center gap-2">
-          <LuScaling size={20} />
-          {property.sqft} sq. ft.
-        </div>
-        <div className="flex items-center gap-2">
-          <MdOutlineBed size={20} />
-          {property.beds} Bed
-        </div>
-        <div className="flex items-center gap-2">
-          <LuBath size={20} />
-          {property.baths} Bath
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
 const SimilarProperties = () => {
-  return (
-    <div className='w-full py-2 bg-transparent my-10'>
-      <div className='text-center py-3 px-4'>
-      <div className="w-full  mb-4 flex justify-between py-3 px-3 border-b-2 border-green-700">
-        <h2 className="text-4xl font-bold">
-            Similar Properties
-        </h2>
-        <div className='flex gap-3'>
-        <button className="bg-green-500 px-4 py-3 rounded-xl text-white">
-            <FaArrowLeft size={15} />
-        </button>
+  const carouselRef = useRef(null);
 
-        <button className="bg-green-500 px-4 py-3 rounded-xl  text-white">
-            <FaArrowRight size={15} />
-        </button>
+  // Function to scroll the carousel left
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  // Function to scroll the carousel right
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="w-full py-2 bg-transparent my-10">
+      <div className="text-center py-3 px-4">
+        <div className="w-full mb-4 flex justify-between items-center py-3 px-3 border-b-2 border-green-700">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+            Similar Properties
+          </h2>
+          <div className="flex gap-3">
+            <button
+              className="bg-green-500 px-4 py-2 sm:py-3 rounded-xl text-white"
+              onClick={scrollLeft}
+            >
+              <FaArrowLeft size={15} />
+            </button>
+
+            <button
+              className="bg-green-500 px-4 py-2 sm:py-3 rounded-xl text-white"
+              onClick={scrollRight}
+            >
+              <FaArrowRight size={15} />
+            </button>
+          </div>
         </div>
-    </div>
-      
+
+        {/* Horizontal Scrollable Carousel */}
         <div
-          className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hidden py-2 px-2"
+          ref={carouselRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth py-2 px-2 scrollbar-hidden"
         >
           {properties.map((property, index) => (
-            <PropertyCard key={index} property={property} />
+            <div
+            key={index}
+            className="flex-shrink-0 w-[50%] sm:w-[50%] md:w-[30%] lg:w-[22%] xl:w-[18%]"
+          >
+            <PropertyCard property={property} />
+          </div>
           ))}
         </div>
       </div>
