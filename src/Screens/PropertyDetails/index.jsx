@@ -40,54 +40,30 @@ const PropertyDetails = () => {
           <div className="w-full lg:w-[65%]  relative">
             {/* Main Swiper Carousel */}
             <Swiper
-              spaceBetween={10}
-              navigation={true} // Enables default Swiper navigation
-              thumbs={{ swiper: thumbsSwiper }}
-              modules={[Navigation, Thumbs]}
-              className="main-carousel rounded-none md:rounded-3xl lg:rounded-3xl "
-            >
-              {images.map((img, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    src={img}
-                    alt={`Property ${index + 1}`}
-                    className="w-full h-[400px]  object-cover rounded-3xl"
-                  />
-                </SwiperSlide>
-              ))}
-              <SwiperSlide>
-                <VideoPreview
-                  videoSrc={house_tour}
-                  className="w-full h-[400px] rounded-3xl"
-                />
-              </SwiperSlide>
-            </Swiper>
-
-            {/* Thumbnails Carousel */}
-            <Swiper
-              onSwiper={setThumbsSwiper}
-              spaceBetween={10}
-              slidesPerView={4}
-              freeMode={true}
-              watchSlidesProgress={true}
-              modules={[Thumbs]}
-              className="thumbnail-carousel mt-4 hidden md:block lg:block "
-            >
-              {images.map((img, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    src={img}
-                    alt={`Thumbnail ${index + 1}`}
-                    className="w-full h-20 object-cover rounded-xl cursor-pointer"
-                  />
-                </SwiperSlide>
-              ))}
-              <SwiperSlide>
-                <div className="w-full h-20 bg-black rounded-xl overflow-hidden">
-                  <VideoPreview videoSrc={house_tour} className="h-full" />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+  spaceBetween={10}
+  navigation={true} // Enables default Swiper navigation
+  thumbs={{ swiper: thumbsSwiper }}
+  modules={[Navigation, Thumbs]}
+  className="main-carousel rounded-none md:rounded-3xl lg:rounded-3xl"
+>
+  {images.map((img, index) => (
+    <SwiperSlide key={index}>
+      <img
+        src={img}
+        alt={`Property ${index + 1}`}
+        className="w-full h-[400px] object-cover sm:rounded-none md:rounded-3xl lg:rounded-3xl"
+      />
+    </SwiperSlide>
+  ))}
+  <SwiperSlide>
+  <div className="w-full h-[400px] flex items-center justify-center rounded-none md:rounded-3xl lg:rounded-3xl ">
+    <VideoPreview
+      videoSrc={house_tour}
+      className="max-h-[90%] max-w-full rounded-none sm:rounded-none"
+    />
+  </div>
+</SwiperSlide>
+</Swiper>
 
             {/* Property Description */}
             <PropertyDescription />

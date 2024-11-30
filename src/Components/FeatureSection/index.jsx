@@ -19,7 +19,7 @@ const FeaturesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Feature 1 */}
           <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition">
-            <div className="text-indigo-600 mb-4">
+            <div className="text-green-600 mb-4">
               <FaShieldAlt size={40} className="mx-auto" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Property Insurance</h3>
@@ -30,7 +30,7 @@ const FeaturesSection = () => {
 
           {/* Feature 2 */}
           <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition">
-            <div className="text-indigo-600 mb-4">
+            <div className="text-green-600 mb-4">
               <FaTag size={40} className="mx-auto" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Best Price</h3>
@@ -41,7 +41,7 @@ const FeaturesSection = () => {
 
           {/* Feature 3 */}
           <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition">
-            <div className="text-indigo-600 mb-4">
+            <div className="text-green-600 mb-4">
               <FaPercent size={40} className="mx-auto" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Lowest Commission</h3>
@@ -52,7 +52,7 @@ const FeaturesSection = () => {
 
           {/* Feature 4 */}
           <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition">
-            <div className="text-indigo-600 mb-4">
+            <div className="text-green-600 mb-4">
               <FaEye size={40} className="mx-auto" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Overall Control</h3>
@@ -63,11 +63,11 @@ const FeaturesSection = () => {
         </div>
 
         {/* Call-to-Action */}
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <button className="px-8 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-500 transition">
             Browse Properties
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

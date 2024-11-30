@@ -30,7 +30,7 @@ const HeroSection = ({page}) => {
     
     <section
       className={`hero-section relative ${
-        page === "Home" ? "min-h-screen" : page=== "Details" ? "min-h-[10vh] " : "min-h-[70vh]"
+        page === "Home" ? "lg:min-h-screen min-h-[70vh] md:min-h-[80vh] " : page=== "Details" ? "min-h-[8vh] md:min-h-[10vh] sm:min-h-[8vh] lg:min-h-[10vh] " : "min-h-[50vh] lg:min-h-[70vh] md:min-h-[60vh]"
       } bg-cover bg-center text-white  flex flex-col justify-center items-start`}
       style={{
         backgroundImage: `url(${hero_pic})`,
@@ -110,10 +110,10 @@ const HeroSection = ({page}) => {
       {/* Apply animation to Hero Content */}
       {page === "Home" ?
       <animated.div style={heroContentAnimation} className="relative z-10 text-left xs:text-center xs:items-center flex flex-col justify-center items-start max-w-7xl pl-10 my-auto py-16 xs:pl-0">
-        <h1 className="text-9xl lg:text-7xl  md:text-6xl sm:text-5xl xs:text-4xl font-semibold mb-4">
+        <h1 className="text-4xl lg:text-7xl  md:text-6xl sm:text-5xl  font-semibold mb-1 sm:mb-4">
           Turning Your Real Estate<br /> Dreams into Reality
         </h1>
-        <p className="text-2xl lg:text-2xl md:text-lg sm:text-lg xs:text-lg mb-6 mt-4 max-w-2xl">
+        <p className="text-lg lg:text-2xl md:text-lg sm:text-lg  mb-1 sm:mb-6 mt-1 sm:mt-4 max-w-2xl">
           Forget clunky application forms. We offer a modern, user-friendly
           platform that makes applying for a job a breeze.
         </p>

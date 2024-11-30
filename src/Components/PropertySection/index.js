@@ -125,7 +125,7 @@ const PropertyGrid = () => {
     <h2 className="text-4xl font-bold mb-14">
       Exclusive Properties by <span className="text-green-500">Vistara</span>
     </h2>
-    <div  className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3  gap-4 lg:gap-10`}  >
+    <div  className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3  gap-2 sm:gap-4 lg:gap-10`}  >
       {properties.map((property, index) => (
         <PropertyCard key={index} property={property} />
       ))}
