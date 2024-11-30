@@ -10,11 +10,13 @@ import TrustedBy from '../../Components/TrustedBy'
 import ContactForm from '../../Components/ContactForm'
 import FAQ from '../../Components/FAQ'
 import Footer from '../../Components/Footer'
+import FeaturesSection from '../../Components/FeatureSection'
 const Home = () => {
   return (
     <>
         <HeroSection page={"Home"}/>
         <TrustedBy/>
+        <FeaturesSection/>
         <Description/>
         <Services/>
         <PropertyGrid/>

@@ -9,6 +9,7 @@ import { LuBath } from "react-icons/lu";
 import { LuScaling } from "react-icons/lu";
 import { MdCallMade } from 'react-icons/md';
 import React, { useState, useEffect, useRef } from "react"
+import PropertyCard from '../PropertyCard';
 
 import { useSpring} from "react-spring"; // Import react-spring
 
@@ -76,90 +77,55 @@ const properties = [
   },
 ];
 
-// Property Card Component
-const PropertyCard = ({ property }) => (
-  <div className="bg-white border cursor-pointer border-gray-200 shadow-sm rounded-xl overflow-hidden">
-    {/* Image Section */}
-    <div className="relative">
-      <img
-        src={property.image}
-        alt={property.title}
-        className="w-full h-64 object-cover"
-      />
-      <span className="absolute top-3 left-3 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-full shadow">
-        {property.status}
-      </span>
-    </div>
+// // Property Card Component
+// const PropertyCard = ({ property }) => (
+//   <div className="bg-white border cursor-pointer border-gray-200 shadow-sm rounded-xl overflow-hidden">
+//     {/* Image Section */}
+//     <div className="relative">
+//       <img
+//         src={property.image}
+//         alt={property.title}
+//         className="w-full h-64 object-cover"
+//       />
+//       <span className="absolute top-3 left-3 bg-white text-gray-800 text-sm font-semibold px-3 py-1 rounded-full shadow">
+//         {property.status}
+//       </span>
+//     </div>
 
-    {/* Details Section */}
-    <div className="p-6 text-left">
-      <p className="text-green-600 font-bold text-lg">{property.price}</p>
-      <h3 className="text-lg font-semibold text-gray-800 leading-snug">
-        {property.title}
-      </h3>
-      <div className="flex gap-5 items-center mt-4 text-gray-500 ">
-        <div className="flex items-center gap-2">
-          <LuScaling size={20} />
-          {property.sqft} sq. ft.
-        </div>
-        <div className="flex items-center gap-2">
-          <MdOutlineBed size={20}/>
-          {property.beds} Bed
-        </div>
-        <div className="flex items-center gap-2">
-         <LuBath size={20}/>
-          {property.baths} Bath
-        </div>
-      </div>
-    </div>
-  </div>
-);
+//     {/* Details Section */}
+//     <div className="p-6 text-left">
+//       <p className="text-green-600 font-bold text-lg">{property.price}</p>
+//       <h3 className="text-lg font-semibold text-gray-800 leading-snug">
+//         {property.title}
+//       </h3>
+//       <div className="flex gap-5 items-center mt-4 text-gray-500 ">
+//         <div className="flex items-center gap-2">
+//           <LuScaling size={20} />
+//           {property.sqft} sq. ft.
+//         </div>
+//         <div className="flex items-center gap-2">
+//           <MdOutlineBed size={20}/>
+//           {property.beds} Bed
+//         </div>
+//         <div className="flex items-center gap-2">
+//          <LuBath size={20}/>
+//           {property.baths} Bath
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// );
 
 // Property Grid Component
 const PropertyGrid = () => {
 
-
-  const [isVisible, setIsVisible] = useState(false); // Track visibility for transition
-
-  const heroRef = useRef(null); // Reference to the Hero section
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setIsVisible(true); // Trigger the animation when in view
-        } else {
-          setIsVisible(false); // Optionally reset the animation when out of view
-        }
-      },
-      { threshold: 0.5 } // Trigger when at least 50% of the component is in view
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    // Cleanup observer on component unmount
-    return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
-      }
-    };
-  }, []);
-  
-  const heroContentAnimation = useSpring({
-    from: { transform: "translateY(100px)", opacity: 0 }, // Start from below and invisible
-    to: { transform: "translateY(0px)", opacity: 1 }, // End at normal position with full opacity
-    config: { tension: 200, friction: 70 },
-  });
   return (
   
-  <div className="max-w-7xl mx-auto flex flex-col bg-white items-center text-center pt-14 pb-32 px-6 sm:px-12">
+  <div className="max-w-7xl mx-auto flex flex-col bg-white items-center text-center pt-14 pb-32 lg:px-6 sm:px-6">
     <h2 className="text-4xl font-bold mb-14">
       Exclusive Properties by <span className="text-green-500">Vistara</span>
     </h2>
-    <div  className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10`}  >
+    <div  className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3  gap-4 lg:gap-10`}  >
       {properties.map((property, index) => (
         <PropertyCard key={index} property={property} />
       ))}

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring"; // Import react-spring
-import hero_pic from "../../assets/hero_house_pic.jpg";
+import hero_pic from "../../assets/hero_1_1.jpg";
 import { SiHomeassistant } from "react-icons/si";
 import { IoIosSearch, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import DropdownMenu from "../DropDownMenu";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header";
 
 const HeroSection = ({page}) => {
   const navigate = useNavigate()
@@ -25,10 +26,12 @@ const HeroSection = ({page}) => {
   });
 
   return  (
+    
+    
     <section
       className={`hero-section relative ${
         page === "Home" ? "min-h-screen" : page=== "Details" ? "min-h-[10vh] " : "min-h-[70vh]"
-      } bg-cover bg-center text-white flex flex-col justify-center items-start`}
+      } bg-cover bg-center text-white  flex flex-col justify-center items-start`}
       style={{
         backgroundImage: `url(${hero_pic})`,
       }}
@@ -102,11 +105,12 @@ const HeroSection = ({page}) => {
           </div>
         )}
       </header>
-      <div className="absolute inset-0 bg-blue-200 bg-opacity-10"></div>
+      
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       {/* Apply animation to Hero Content */}
       {page === "Home" ?
       <animated.div style={heroContentAnimation} className="relative z-10 text-left xs:text-center xs:items-center flex flex-col justify-center items-start max-w-7xl pl-10 my-auto py-16 xs:pl-0">
-        <h1 className="text-9xl lg:text-7xl md:text-6xl sm:text-5xl xs:text-4xl font-semibold mb-4">
+        <h1 className="text-9xl lg:text-7xl  md:text-6xl sm:text-5xl xs:text-4xl font-semibold mb-4">
           Turning Your Real Estate<br /> Dreams into Reality
         </h1>
         <p className="text-2xl lg:text-2xl md:text-lg sm:text-lg xs:text-lg mb-6 mt-4 max-w-2xl">
@@ -139,6 +143,7 @@ const HeroSection = ({page}) => {
 
 }
     </section>
+    
 
   );
 };
